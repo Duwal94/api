@@ -5,12 +5,13 @@ import (
 	"database/sql" // Import the sql package to use sql.NullString
 	"testing"
 
+	"github.com/Duwal94/api.git/db/util"
 	"github.com/stretchr/testify/require"
 )
 
 func TestCreateRole(t *testing.T) {
 	arg := CreateRoleParams{
-		RoleName:  sql.NullString{String: "Admin", Valid: true},
+		RoleName:  sql.NullString{String: util.RandomString(5), Valid: true},
 		UpdatedBy: sql.NullString{String: "riyesh", Valid: true},
 		CreatedBy: sql.NullString{String: "riyesh", Valid: true},
 	}
